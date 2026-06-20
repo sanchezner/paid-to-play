@@ -1,0 +1,12 @@
+{
+    "redirects": [
+        { "source": "/", "destination": "/paid-to-play/", "permanent": false }
+    ],
+    "rewrites": [
+        { "source": "/paid-to-play/assets/:path*", "destination": "/assets/:path*" },
+        { "source": "/paid-to-play/data/:path*", "destination": "/data/:path*" },
+        { "source": "/paid-to-play/favicon.svg", "destination": "/favicon.svg" },
+        { "source": "/paid-to-play", "destination": "/index.html" },
+        { "source": "/paid-to-play/", "destination": "/index.html" }
+    ]
+}
