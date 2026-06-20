@@ -1,0 +1,23 @@
+services:
+  daily-worker:
+    build: .
+    command: ["python", "-m", "jobs.daily_flow"]
+    env_file: .env
+    environment:
+      TRACKING_URI: sqlite:////app/mlflow.db
+    volumes:
+      - ./frontend/public/data:/app/frontend/public/data
+      - ./mlflow.db:/app/mlflow.db
+      - ./mlruns:/app/mlruns
+    restart: unless-stopped
+
+  annual-worker:
+    build: .
+    command: ["python", "-m", "jobs.train_flow"]
+    env_file: .env
+    environment:
+      TRACKING_URI: sqlite:////app/mlflow.db
+    volumes:
+      - ./mlflow.db:/app/mlflow.db
+      - ./mlruns:/app/mlruns
+    restart: unless-stopped

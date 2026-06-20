@@ -1,0 +1,146 @@
+.page-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 2.5rem;
+    overflow: hidden;
+}
+
+main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.title a {
+    color: black;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.text {
+    flex: 1;
+    min-width: 0;
+    max-width: 60ch;
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    font-family: 'Newsreader';
+    overflow-y: auto;
+}
+
+.text p {
+    margin: 8px;
+}
+
+.figures {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 650px;
+    overflow: hidden;
+}
+
+.chart {
+    flex: 0 0 auto;
+    max-width: 650px;
+}
+
+.history-chart {
+    flex: 0 0 auto;
+    max-width: 650px;
+}
+
+.table {
+    flex: 0 1 auto;
+    min-height: 0;
+    width: 100%;
+    max-height: 40vh;
+    display: flex;
+}
+
+.figures--selected .table {
+    max-height: calc(40vh - 11rem);
+}
+
+.data-sources {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: -1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.65rem;
+    color: #888888;
+    line-height: 1.5;
+}
+
+.data-sources a {
+    color: #666666;
+    text-decoration: none;
+}
+
+.data-sources a:hover {
+    text-decoration: underline;
+}
+
+.positive-text {
+    color: #8199b0;
+}
+
+.negative-text {
+    color: #bf93a0;
+}
+
+@media (max-width: 1024px) {
+    .page-container {
+        height: auto;
+        overflow: visible;
+    }
+    main {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: stretch;
+    }
+    .text {
+        max-width: none;
+        max-height: none;
+        overflow-y: visible;
+    }
+    .figures {
+        max-height: none;
+        overflow: visible;
+    }
+    .table {
+        max-height: 60vh;
+    }
+    .figures--selected .table {
+        max-height: calc(60vh - 11rem);
+    }
+    .page-container {
+        padding: 2.5rem 2.5rem;
+    }
+}
