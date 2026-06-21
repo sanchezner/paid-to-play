@@ -15,7 +15,7 @@ Daily-refreshed NBA player valuation chart: every dot is an active player plotte
 
 The frontend is a React + Observable Plot scatter chart with a searchable player table and per-player season trajectory view. No live API — data refreshes once per day via batch pipeline.
 
-For full architecture decisions and modeling rationale, see [DESIGN.md](./DESIGN.md).
+For full architecture decisions and modeling rationale, see [my blog](https://sanchezner.com/2026/06/21/building-paid-to-play).
 
 ---
 
@@ -144,4 +144,4 @@ The Dockerfile expects a local `mlflow.db` and `mlruns/` directory (gitignored, 
 
 ## Author
 
-[sanchezner orange](https://www.sanchezner.com)
+[Sanchezner Orange](https://www.sanchezner.com)
