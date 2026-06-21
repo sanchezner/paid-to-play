@@ -18,10 +18,7 @@ COPY config/ config/
 COPY jobs/ jobs/
 COPY artifacts/ artifacts/
 
-COPY mlflow.db mlflow.db
-COPY mlruns/ mlruns/
+ENV PYTHONUNBUFFERED=1
+ENV TRACKING_URI=sqlite:////app/mlflow.db
 
-ENV PYTHONBUFFERED=1
-ENV TRACKING_URI = sqlite:////app/mlflow.db
-
-CMD ["python", "-m", "jobs.daily_flow"]
+CMD ["python", "-m", "jobs.daily_flow"]%
