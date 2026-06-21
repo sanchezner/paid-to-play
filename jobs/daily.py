@@ -7,6 +7,7 @@ from bronze.gamelogs import get_current_nba_season
 from bronze.pipeline import run_incremental
 from gold.inference_features import build_inference_features, validate_inference_features
 from serving.predictions import score_unscored
+from serving.publish import publish_snapshot
 from serving.snapshot import refresh_snapshot
 from silver.gamelogs import process_gamelogs
 from silver.storage import get_engine
@@ -45,6 +46,7 @@ def score_predictions(season):
 def maybe_refresh_snapshot(season, new_rows, game_date, output_dir=output_dir):
     if new_rows:
         refresh_snapshot(season, output_dir)
+        publish_snapshot(output_dir)
     else:
         print(f"No new games for {game_date}; snapshot left unchanged")
 
