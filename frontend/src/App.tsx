@@ -41,6 +41,9 @@ export default function App() {
           <p>
             This is descriptive trend, not a verdict on what any player "should" earn. A player far from the line isn't mispriced by some cosmic law; they're priced differently than the league norm, which is often the case (injury history, age, contract timing) and sometimes genuinely surprising.
           </p>
+          <p>
+            Read more on how I built it <a href='https://sanchezner.com/2026/06/21/building-paid-to-play' target='_blank'>here</a>.
+          </p>
 
           <h2>metrics defined</h2>
           <p>
